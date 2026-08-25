@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Sim DEA">
+  
+  <title>Simulador DEA</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="contenedor-dea">
+    <img src="img/logo.png" id="logo-dea" alt="Logo" style="position:absolute; top:20px; left:20px; width:100px; z-index:10;">
+    
+    <button id="boton-on" style="position:absolute; top:30%; left:25%; padding:15px; z-index:10;">ON / OFF</button>
+    <div id="zona-conector" class="conector-tactil"></div>
+    <div id="boton-descarga" class="boton-descarga"></div>
+  </div>
+
+  <div id="panel-docente">
+    <h2 style="margin-top:0; color:#ff9900;">⚙️ Panel Docente</h2>
+    <button onclick="document.getElementById('panel-docente').style.transform = 'translateX(100%)'" style="position:absolute; top:10px; right:10px;">❌</button>
+    
+    <h3>Siguiente Ritmo:</h3>
+    <button onclick="docenteCambiarRitmo('FV')">⚡ Fibrilación Ventricular</button><br><br>
+    <button onclick="docenteCambiarRitmo('ASISTOLIA')">〰️ Asistolia</button>
+    
+    <h3>Interrupciones:</h3>
+    <button onclick="docenteFalloParches()">🩹 Fallo de Parches</button><br><br>
+    <button onclick="docenteForzarAnalisis()">⏩ Forzar Análisis Inmediato</button>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
